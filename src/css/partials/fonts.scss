@@ -1,0 +1,32 @@
+[class^="icon-"], [class*=" icon-"], .slick-arrow, .select2-selection__arrow, .lg-prev, .lg-next {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-left:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
+  content: "\e901";
+}
+
+.slick-next {
+  &:before {
+    content: "\e901";
+  }
+}
+.slick-prev {
+  &:before {
+    content: "\e900";
+  }
+}

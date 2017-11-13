@@ -1,0 +1,391 @@
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/placeholders";
+
+
+@import "partials/fonts";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/footer";
+
+@include fontFace('Officina','../fonts/OfficinaSansMediumC', 400);
+@include fontFace('Officina','../fonts/OfficinaSerifBoldOSC', 500);
+
+body,
+html {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+
+  font-family: 'Officina', 'Helvetica', Arial, serif;
+  font-weight: 400;
+  font-size: 35px;
+  user-select: none;
+  overflow: hidden;
+
+  color: #000;
+}
+.background-fix {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-size: cover;
+  background-image: url('../images/background.jpg');
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+
+  background-size: cover;
+
+  transition: all .3s ease-in;
+
+  opacity: 0;
+
+  &--animate {
+    opacity: 1;
+    transition: all .3s ease-in;
+  }
+
+
+  &--intro {
+    background-image: url('../../images/background-intro.jpg');
+  }
+
+  &--1 {
+    background-image: url('../../images/background-1.jpg');
+  }
+  &--2 {
+    background-image: url('../../images/background-2.jpg');
+  }
+  &--3 {
+    background-image: url('../../images/background-3.jpg');
+  }
+  &--4 {
+    background-image: url('../../images/background-4.jpg');
+  }
+  &--5 {
+    background-image: url('../../images/background-5.jpg');
+  }
+  &--6 {
+    background-image: url('../../images/background-6.jpg');
+  }
+  &--7 {
+    background-image: url('../../images/background-7.jpg');
+  }
+}
+
+
+button {
+  outline: none;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.reset {
+  letter-spacing: 2px;
+}
+
+.lang {
+  letter-spacing: 4px;
+}
+
+
+
+.pressed {
+  color: #8f6752;
+}
+
+.js-quiz {
+  font-family: 'Officina', 'Helvetica', Arial, serif;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  transition: all .3s ease-in;
+}
+
+.pic {
+  transition: all .3s ease-in;
+}
+
+.welcome {
+  margin-top: 325px;
+  text-align: center;
+
+  .js-quiz {
+    margin-top: 99px;
+    font-size: 38px;
+    color: #af2626;
+  }
+}
+
+.js-quiz {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 400%;
+    top: -150%;
+  }
+}
+
+.header {
+  margin-bottom: 10px;
+  font-size: 38px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transition: all .3s ease-in;
+  font-weight: 500;
+
+  &--under {
+    max-width: 500px;
+    @include push--auto;
+    font-size: 37px;
+    line-height: 44px;
+    font-weight: 500;
+    transition: all .3s ease-in;
+  }
+}
+
+.question {
+  margin-top: 70px;
+  font-size: 80px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  transition: all .3s ease-in;
+}
+
+.quiz {
+  text-align: center;
+}
+
+.answers {
+  display: flex;
+  margin-top: 190px;
+  justify-content: space-around;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.quiz-answer {
+  position: relative;
+  width: 33%;
+  font-family: 'Officina', 'Helvetica', Arial, serif;
+  font-weight: 500;
+  font-size: 38px;
+
+  transition: all .3s ease-in;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 250%;
+    top: -75%;
+  }
+}
+
+.quiz-alert {
+
+  width: 100%;
+  position: fixed;
+  bottom: 135px;
+  font-weight: 500;
+  font-size: 21px;
+  color: #8f6752;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+
+  &__text {
+    position: relative;
+    width: 375px;
+    @include push--auto;
+
+    &:after, &:before {
+      position: absolute;
+      right: 62px;
+      content: '';
+      display: block;
+      width: 256px;
+      height: 13px;
+      background-image: url("../images/decor.png");
+      background-size: cover;
+    }
+    &:after {
+      top: -46px;
+    }
+
+    &:before {
+      bottom: -40px;
+    }
+  }
+
+}
+
+.quiz-additional {
+  .js-quiz {
+
+    font-size: 21px;
+    color: #af2626;
+  }
+
+  &--next {
+    width: 100%;
+    position: fixed;
+    bottom: 134px;
+  }
+}
+
+.description {
+  @include push--auto;
+  font-size: 20px;
+
+  transition: all .3s ease-in;
+}
+
+.question {
+
+  &--1 {
+    .description {
+      max-width: 235px;
+      margin-top: 75px;
+    }
+  }
+  &--2 {
+    .description {
+      max-width: 440px;
+      margin-top: 40px;
+    }
+  }
+  &--3 {
+    .description {
+      width: 250px;
+      margin-top: 120px;
+    }
+  }
+  &--4 {
+    .description {
+      width: 387px;
+      margin-top: 140px;
+    }
+  }
+  &--5 {
+    .description {
+      width: 340px;
+      margin-top: 120px;
+    }
+  }
+  &--6 {
+    .description {
+      width: 350px;
+      margin-top: 70px;
+    }
+  }
+  &--7 {
+    .description {
+      width: 190px;
+      margin-top: 110px;
+    }
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 0;
+  padding-left: 22px;
+  padding-right: 22px;
+  box-sizing: border-box;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    height: 44px;
+    padding-top: 4px;
+    color: #ba9865;
+    font-family: 'Officina', 'Helvetica', Arial, serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+
+  }
+}
+
+.score {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  width: 100%;
+  font-size: 30px;
+  line-height: 41px;
+}
+.rang {
+  position: relative;
+  text-align: center;
+}
+
+
+
+.hide {
+  display: none;
+}
+
+.animate-inside {
+  transform: scale(.3);
+  opacity: 0;
+}
+.animate-down {
+  transform: translateY(300px);
+  opacity: 0;
+}
+.animate-top {
+  transform: translateY(-300px);
+  opacity: 0;
+}
+.animate {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

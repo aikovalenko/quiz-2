@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=1920, initial-scale=1, maximum-scale=1.0" />
+      <title>Смоленская крепость</title>
+      <link rel='stylesheet' href='css/libs.css'>
+      <link rel='stylesheet' href='css/style.css'>
+  </head>
+  <body>
+    <div class="background-fix"></div>
+    <div class="background background--animate background--intro"></div>
+
+
+    <div class="welcome"></div>
+
+    <div class="quiz"></div>
+
+    <div class="footer"></div>
+
+    <script src='js/libs.js'></script>
+    <script>
+        var quizQuestions = [
+            {
+                "ru": {
+                    question: "БЕРДЫШ это?",
+                    answers: {
+                        "Топор на длинном древке": "1",
+                        "Кинжал на круглой рукояти": "0",
+                        "Пороховница из рога с дозатором": "0"
+                    },
+                    description: "<p>Представлял собой щит с железной рукавицей, надеваемой на левую руку.</p><p>К переднему концу рукавицы прикреплялся узкий клинок типа шпаги.</p><p>Тарч употреблялся лишь при обороне городов и крепостей.</p>"
+                },
+                "eng": {
+                    question: "Tarch",
+                    answers: {
+                        "Polish sword": "0",
+                        "Kind of kernel": "0",
+                        "Russian shield": "1"
+                    },
+                    description: "<p>Tarch – is a shield with a metal mitten cut through it and worn on the left hand.</p><p>The narrow blade (similar to a sword) was attached to the front side of a mitten.</p>"
+                }
+            }
+        ];
+        var quizQuestionsReal = [
+            {
+                "ru": {
+                    question: "БЕРДЫШ это?",
+                    answers: {
+                        "Топор на длинном древке": "1",
+                        "Кинжал на круглой рукояти": "0",
+                        "Пороховница из рога с дозатором": "0"
+                    },
+                    description: "<p>Представлял собой щит с железной рукавицей, надеваемой на левую руку.</p><p>К переднему концу рукавицы прикреплялся узкий клинок типа шпаги.</p><p>Тарч употреблялся лишь при обороне городов и крепостей.</p>"
+                },
+                "eng": {
+                    question: "Tarch",
+                    answers: {
+                        "Polish sword": "0",
+                        "Kind of kernel": "0",
+                        "Russian shield": "1"
+                    },
+                    description: "<p>Tarch – is a shield with a metal mitten cut through it and worn on the left hand.</p><p>The narrow blade (similar to a sword) was attached to the front side of a mitten.</p>"
+                }
+            },
+            {
+                "ru": {
+                    question: "СТРЕЛЕЦКИЙ ГОЛОВА Русского войска 17 века это?",
+                    answers: {
+                        "Бригадный генерал": "0",
+                        "Капитан": "0",
+                        "Полковник": "1"
+                    },
+                    description: "<p>Куяк — доспех из металлических пластин, прямоугольных или круглых, набранных каждая отдельно на кожаную или суконную основу.</p><p>Куяки изготовлялись с рукавами и без рукавов, имели полы, как кафтан. Куяк мог усиливаться на груди и спине большими латными досками — щитами. Такие доспехи бывали на Руси с XIII по XVII век и имели близкие аналоги в Западной Европе. Сам же термин «куяк» появился лишь в XVI веке.</p>"
+                },
+                "eng": {
+                    question: "Cooyaak",
+                    answers: {
+                        "Armour from plates ": "1",
+                        "Fist in the Old Russian language": "0",
+                        "Name of a bird": "0"
+                    },
+                    description: "<p>Cooyaak – is a kind of armour from the metal rectangular or round plates, which had been put separately on leather or cloth basis.</p><p>The cooyaaks were produced with or without the sleeves, they also had a tail, like a caftan. It could be straightened with some big armour planks – the shields. Such kind of the armour were popular in Russia from the 13th till 17th centuries, they had some close analogues in the Western Europe. The term “cooyaak” itself appeared only in 16th century.</p>"
+                }
+            },
+            {
+                "ru": {
+                    question: "Ружье с кремневым замком называли?",
+                    answers: {
+                        "мушкет": "0",
+                        "самопал": "1",
+                        "самострел": "0"
+                    },
+                    description: "<p>Юшман представляет собой кольчужную рубашку с вплетённым на груди и спине набором горизонтальных пластин.</p>"
+                },
+                "eng": {
+                    question: "Yooshman",
+                    answers: {
+                        "Mutton soup": "0",
+                        "Kind of a chain mail": "1",
+                        "Turkish sabre": "0"
+                    },
+                    description: "<p>Yooshman is a chain mail skirt with some horizontal plans, plaited into on a breast-high.</p>"
+                }
+            },
+            {
+                "ru": {
+                    question: "Остроги из частокола в 17 веке возводили?",
+                    answers: {
+                        "Сибирь и Дальний Восток": "1",
+                        "Сибирь и Большая засечная черта": "0",
+                        "Новгородский разряд и Дальний Восток": "0"
+                    },
+                    description: "<p>Чалдар — конские покровы, набранные из металлических блях, нашитых на сукно, закрывавшие круп, бока и грудь лошади и имевшие защитное назначение.</p>"
+                },
+                "eng": {
+                    question: "CHALDAR",
+                    answers: {
+                        "Military rank": "0",
+                        "Kind of a thrust weapon": "0",
+                        "Armour for a horse": "1"
+                    },
+                    description: "<p>Chaldar is a covering for a horse, produced from metal plates, sewed on a cloth which could cover a croup of a horse, its sides and breast, it had a protective destination.</p>"
+                }
+            },
+            {
+                "ru": {
+                    question: "СААДАК состоял из?",
+                    answers: {
+                        "Лук, стрелы и подсаадашный нож": "0",
+                        "Лук с налучьем и колчан со стрелами": "1",
+                        "Лук с налучьем и подсаадашный нож": "0"
+                    },
+                    description: "<p>Чалдар — конские покровы, набранные из металлических блях, нашитых на сукно, закрывавшие круп, бока и грудь лошади и имевшие защитное назначение.</p>"
+                },
+                "eng": {
+                    question: "CHALDAR",
+                    answers: {
+                        "Military rank": "0",
+                        "Kind of a thrust weapon": "0",
+                        "Armour for a horse": "1"
+                    },
+                    description: "<p>Chaldar is a covering for a horse, produced from metal plates, sewed on a cloth which could cover a croup of a horse, its sides and breast, it had a protective destination.</p>"
+                }
+            },
+            {
+                "ru": {
+                    question: "ПИЩАЛЬ это?",
+                    answers: {
+                        "Подкоп под крепостную стену": "0",
+                        "Длинноствольные пушка или ружье": "1",
+                        "ядро с фитилем": "0"
+                    },
+                    description: "<p>Мисюркой — железной шапкой — называлось воинское наголовье, защищавшее лишь верхнюю часть головы воина. </p><p>На Руси мисюрка известна с XIV века.</p>"
+                },
+                "eng": {
+                    question: "Misyurka",
+                    answers: {
+                        "Kind of a glass": "0",
+                        "Kind of a helmet": "1",
+                        "A diminutive name": "0"
+                    },
+                    description: "<p>Misyurka – is a warrior’s “cap” which protected the up-side of the warrior’s head. </p><p>It is well-known in Russia from the 14th century.</p>"
+                }
+            },
+            {
+                "ru": {
+                    question: "ПОЛУНАГАЛИЩЕ это?",
+                    answers: {
+                        "Передний клапан патронной сумки": "0",
+                        "Короткие голенища, крепившиеся к ботам": "0",
+                        "Чехол, закрывающий ружейный замок": "1"
+                    },
+                    description: "<p>Тегиляй (XVI век) — одежда вроде кафтана с короткими рукавами и с высоким стоячим воротником. </p><p>Подбитый ватою или пенькой и насквозь простёганный, тегиляй обладал достаточными защитными качествами и носился вместо доспехов небогатыми ратниками.</p>"
+                },
+                "eng": {
+                    question: "Tegilyay",
+                    answers: {
+                        "Type of an army": "0",
+                        "Cap with ear-flaps in 17th century": "0",
+                        "Military caftan": "1"
+                    },
+                    description: "<p>Tegilyay (16th century) – clothes similar to a caftan with short sleeves and a high stand-up collar. </p><p>Lined with wadding and hemp and quilted through. It had a sufficient protective merits and was worn by poor warriors instead of the armours.</p>"
+                }
+            },
+            {
+                "ru": {
+                    question: "Ремень через плечо с зарядцами и пулевой сумкой назывался?",
+                    answers: {
+                        "Банделер": "1",
+                        "Берендейка": "0",
+                        "Вязьня с рогом": "0"
+                    },
+                    description: "<p>Бердыш — древковое холодное оружие</p>"
+                },
+                "eng": {
+                    question: "Bierdysh",
+                    answers: {
+                        "Cold steel": "1",
+                        "Military rank": "0",
+                        "Helmet’s end cap": "0"
+                    },
+                    description: "<p>Bierdysh is a steel pole-arm cold steel.</p>"
+                }
+            },
+            {
+                "ru": {
+                    question: "ОДНОРЯДКА это?",
+                    answers: {
+                        "Погребальное платье": "0",
+                        "Платье без подкладки": "0",
+                        "Платье с одним рядом пуговиц": "1"
+                    },
+                    description: "<p>Бердыш — древковое холодное оружие</p>"
+                },
+                "eng": {
+                    question: "Bierdysh",
+                    answers: {
+                        "Cold steel": "1",
+                        "Military rank": "0",
+                        "Helmet’s end cap": "0"
+                    },
+                    description: "<p>Bierdysh is a steel pole-arm cold steel.</p>"
+                }
+            },
+            {
+                "ru": {
+                    question: "Цвет кафтана стрельцов приказа Григория Семеновича Титова?",
+                    answers: {
+                        "красно смородиновый": "0",
+                        "бруснишный": "0",
+                        "серогорячий": "1"
+                    },
+                    description: "<p>Бердыш — древковое холодное оружие</p>"
+                },
+                "eng": {
+                    question: "Bierdysh",
+                    answers: {
+                        "Cold steel": "1",
+                        "Military rank": "0",
+                        "Helmet’s end cap": "0"
+                    },
+                    description: "<p>Bierdysh is a steel pole-arm cold steel.</p>"
+                }
+            }
+        ];
+
+
+        var quizStrings = [
+            {
+                "ru": {
+                    header: "проверьте свои познания",
+                    about: "в военном обмундировании XVII века",
+                    start: "Начать",
+                    end: "Завершить квест",
+                    score: "Ваш счет",
+                    out: "из",
+                    tryAgain: "неверно, попробуйте ещё раз",
+                    reset: "В начало",
+                    next: "Следующий вопрос",
+                    lang: "English",
+                    rang: ["новик","стрелец","сотник","голова","воевода"]
+                },
+                "eng": {
+                    header: "test your knowledge",
+                    about: "of the military outfit of the XVII century",
+                    start: "Start",
+                    end: "Finish",
+                    score: "Your score is",
+                    out: "out of",
+                    tryAgain: "wrong, try again",
+                    reset: "To the beginning",
+                    next: "Next question",
+                    lang: "Русский"
+                }
+            }
+        ];
+    </script>
+    <script src='js/scripts.js'></script>
+  </body>
+</html>
