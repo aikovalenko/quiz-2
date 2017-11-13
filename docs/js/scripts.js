@@ -90,7 +90,7 @@ $(document).on('click', '.js-quiz', function () {
             function getRang(rang) {
                 $('body').append(
                     "<div class='rang'>" +
-                        "<div class='rang__img'><img src='../images/exmp.jpg'></div>" +
+                        "<div class='rang__img'><img src='/images/exmp.jpg'></div>" +
                         "<div class='rang__name'>" + quizStrings[0][lang].rang[rang] + "</div>" +
                     "</div>"
                 );
