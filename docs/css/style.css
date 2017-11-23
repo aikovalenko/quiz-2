@@ -157,6 +157,32 @@ body
 {
     background-image: url('../images/background-7.jpg');
 }
+.background--score--0
+{
+    background-image: url('../images/background-result-5.jpg');
+}
+.background--score--1,
+.background--score--2,
+.background--score--3
+{
+    background-image: url('../images/background-result-4.jpg');
+}
+.background--score--4,
+.background--score--5,
+.background--score--6
+{
+    background-image: url('../images/background-result-3.jpg');
+}
+.background--score--7,
+.background--score--8,
+.background--score--9
+{
+    background-image: url('../images/background-result-2.jpg');
+}
+.background--score--10
+{
+    background-image: url('../images/background-result-1.jpg');
+}
 
 button
 {
@@ -504,7 +530,71 @@ button
 {
     position: relative;
 
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    height: 100%;
+
+    -webkit-transition: opacity .4s ease;
+         -o-transition: opacity .4s ease;
+            transition: opacity .4s ease;
     text-align: center;
+
+    opacity: 0; 
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+}
+.rang__text
+{
+    font-size: 40px; 
+
+    width: 50%;
+}
+.rang__text__score
+{
+    margin-bottom: 80px;
+}
+.rang__text__name
+{
+    margin-bottom: 240px;
+
+    color: #8f6752;
+}
+.rang__text__name .rang-name
+{
+    font-size: 76px;
+    font-weight: 500;
+}
+.rang__text .reset
+{
+    font-family: 'Officina', 'Helvetica', Arial, serif;
+    font-size: 42px;
+    font-weight: 500; 
+
+    text-transform: uppercase;
+
+    color: #8f6752;
+}
+.rang__text .reset:after,
+.rang__text .reset:before
+{
+    right: -7px; 
+
+    width: 400px;
+    height: 20px;
+}
+.rang__text .reset:after
+{
+    top: -58px;
+}
+.rang__text .reset:before
+{
+    bottom: -48px;
 }
 
 .hide

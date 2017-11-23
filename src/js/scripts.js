@@ -6,9 +6,11 @@ var i = 0,
     quiz = $('.quiz'),
     welcome = $('.welcome'),
     footer = $('.footer'),
-    lang = $('html').attr('lang');
+    htmlTag = $('html'),
+    background = $('.background'),
+    lang = htmlTag.attr('lang');
 
-var quizQuestionsLength = quizQuestions.length;
+var quizQuestionsLength = quizQuestionsTest.length;
 
 
 
@@ -25,7 +27,12 @@ function interfaceRender() {
 
 }
 interfaceRender();
-
+// $('body').append(
+//     "<div class='rang'>" +
+//     "<div class='rang__img'><img src='/images/exmp.jpg'></div>" +
+//     "<div class='rang__name'>" + quizStrings[0][lang].rang[0] + "</div>" +
+//     "</div>"
+// );
 
 $(document).on('click', '.js-quiz', function () {
 
@@ -85,24 +92,28 @@ $(document).on('click', '.js-quiz', function () {
             firstClick = true;
             i++;
 
-        } else if ( i == quizQuestionsLength ) {
+        } else if ( i === quizQuestionsLength ) {
 
             function getRang(rang) {
                 $('body').append(
                     "<div class='rang'>" +
-                        "<div class='rang__img'><img src='/images/exmp.jpg'></div>" +
-                        "<div class='rang__name'>" + quizStrings[0][lang].rang[rang] + "</div>" +
+                        "<div class='rang__text'>" +
+                            "<div class='rang__text__score'>" + quizStrings[0][lang].rangText[score] + "</div>" +
+                            "<div class='rang__text__name'>" + quizStrings[0][lang].rang[rang] + "</div>" +
+                            "<button class='reset reset--rang quiz-alert__text'>Начать сначала</button>" +
+                        "</div>" +
                     "</div>"
                 );
+                $('.rang').addClass("background--score--" + score + '').css('opacity', '1');
             }
 
 
-
-            if (score == 0) {
+            // background.addClass("background--animate background--score--" + score + '');
+            if (score === 0) {
                 console.log('new');
                 getRang(0);
             }
-            else if (score == 1 || score == 2 || score == 3) {
+            else if (score === 1 || score === 2 || score === 3) {
                 console.log('стрелец');
                 getRang(1);
             }
@@ -118,20 +129,20 @@ $(document).on('click', '.js-quiz', function () {
                 console.log('голова');
                 getRang(4);
             }
+            // setTimeout(function () {
+            //     // quiz.append( "<div class='score'>" + quizStrings[0][lang].score + " " + score + " " + quizStrings[0][lang].out + " " + quizQuestionsLength +"</div>" );
+            //     welcome.show();
+            //     $('.rang').remove();
+            //     $('.animate-js').addClass('animate');
+            //     $('.background').addClass('background--animate background--intro');
+            //
+            // }, 10000);
             setTimeout(function () {
-                // quiz.append( "<div class='score'>" + quizStrings[0][lang].score + " " + score + " " + quizStrings[0][lang].out + " " + quizQuestionsLength +"</div>" );
-                welcome.show();
-                $('.rang').addClass('hide');
-                $('.animate-js').addClass('animate');
-                $('.background').addClass('background--intro background--animate');
-
-
-
 
 
                 score = 0;
                 i = 0;
-            }, 5000);
+            }, 100);
 
         } else {
 
@@ -192,12 +203,14 @@ $(document).on('click', '.reset', function () {
 
     $('.animate-js').removeClass('animate');
     $('.background').addClass('background--intro').removeClass("background--" + i + '');
+    $('.rang').css('opacity', '0')
     setTimeout(function () {
         quiz.html('');
         welcome.show();
         $('.animate-js').addClass('animate');
         $('.background').addClass('background--animate');
         $('body').removeClass();
+        $('.rang').remove();
     }, 400);
 
     score = 0;
@@ -207,13 +220,15 @@ $(document).on('click', '.lang', function () {
 
     $('.animate-js').removeClass('animate');
     $('.background').addClass('background--intro').removeClass("background--" + i + '');
+    $('.rang').remove();
     setTimeout(function () {
-        if ($('html').attr('lang') == 'ru') {
+        if (lang === 'ru') {
             lang = 'eng';
         } else {
             lang = 'ru';
         }
-        $('html').attr('lang', lang);
+        // $('html').attr('lang', lang);
+
 
         quiz.html('');
         welcome.html('');
