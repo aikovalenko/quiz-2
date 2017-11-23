@@ -10,7 +10,7 @@ var i = 0,
     background = $('.background'),
     lang = htmlTag.attr('lang');
 
-var quizQuestionsLength = quizQuestionsTest.length;
+var quizQuestionsLength = quizQuestions.length;
 
 
 
