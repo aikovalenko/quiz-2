@@ -27,12 +27,7 @@ function interfaceRender() {
 
 }
 interfaceRender();
-// $('body').append(
-//     "<div class='rang'>" +
-//     "<div class='rang__img'><img src='/images/exmp.jpg'></div>" +
-//     "<div class='rang__name'>" + quizStrings[0][lang].rang[0] + "</div>" +
-//     "</div>"
-// );
+
 
 $(document).on('click', '.js-quiz', function () {
 
@@ -100,6 +95,7 @@ $(document).on('click', '.js-quiz', function () {
                         "<div class='rang__text'>" +
                             "<div class='rang__text__score'>" + quizStrings[0][lang].rangText[score] + "</div>" +
                             "<div class='rang__text__name'>" + quizStrings[0][lang].rang[rang] + "</div>" +
+
                             "<button class='reset reset--rang quiz-alert__text'>Начать сначала</button>" +
                         "</div>" +
                     "</div>"
@@ -117,15 +113,15 @@ $(document).on('click', '.js-quiz', function () {
                 console.log('стрелец');
                 getRang(1);
             }
-            else if (score == 4 || score == 5 || score == 6) {
+            else if (score === 4 || score === 5 || score === 6) {
                 console.log('сотник');
                 getRang(2);
             }
-            else if (score == 7 || score == 8 || score == 9) {
+            else if (score === 7 || score === 8 || score === 9) {
                 console.log('голова');
                 getRang(3);
             }
-            else if (score == 10) {
+            else if (score === 10) {
                 console.log('голова');
                 getRang(4);
             }

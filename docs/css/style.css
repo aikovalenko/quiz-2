@@ -578,7 +578,7 @@ button
 
     text-transform: uppercase;
 
-    color: #8f6752;
+    color: #9e5a33;
 }
 .rang__text .reset:after,
 .rang__text .reset:before
@@ -595,6 +595,11 @@ button
 .rang__text .reset:before
 {
     bottom: -48px;
+}
+
+.rang-score
+{
+    color: #8f6752;
 }
 
 .hide
