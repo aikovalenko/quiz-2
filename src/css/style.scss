@@ -12,6 +12,8 @@
 @include fontFace('Officina','../fonts/OfficinaSansMediumC', 400);
 @include fontFace('Officina','../fonts/OfficinaSerifBoldOSC', 500);
 
+@include fontFace('Constantia','../fonts/Constantia', 400);
+
 body,
 html {
   position: fixed;
@@ -372,15 +374,16 @@ button {
 
   transition: opacity .4s ease;
   opacity: 0;
+  font-family: 'Constantia', 'Helvetica', Arial, serif;
 
   &__text {
     width: 50%;
     font-size: 40px;
+    line-height: 60px;
     //font-weight: 500;
 
     &__score {
       margin-bottom: 80px;
-
     }
 
     &__name {
@@ -388,27 +391,29 @@ button {
       color: #8f6752;
       .rang-name {
         font-size: 76px;
-        font-weight: 500;
+        line-height: 76px;
+        //font-weight: 700;
       }
     }
 
     .reset {
-      font-size: 42px;
-      font-family: 'Officina', 'Helvetica', Arial, serif;
+      font-size: 36px;
+      font-family: 'Constantia', 'Helvetica', Arial, serif;
       color: #9e5a33;
       text-transform: uppercase;
       font-weight: 500;
+      letter-spacing: .25px;
 
       &:after, &:before {
-        width: 400px;
-        height: 20px;
-        right: -7px;
+        width: 445px;
+        height: 25px;
+        right: -30px;
       }
       &:after {
-        top: -58px;
+        top: -80px;
       }
       &:before {
-        bottom: -48px;
+        bottom: -70px;
       }
     }
   }

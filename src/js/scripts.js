@@ -96,7 +96,7 @@ $(document).on('click', '.js-quiz', function () {
                             "<div class='rang__text__score'>" + quizStrings[0][lang].rangText[score] + "</div>" +
                             "<div class='rang__text__name'>" + quizStrings[0][lang].rang[rang] + "</div>" +
 
-                            "<button class='reset reset--rang quiz-alert__text'>Начать сначала</button>" +
+                            "<button class='reset reset--rang quiz-alert__text'>Начать заново</button>" +
                         "</div>" +
                     "</div>"
                 );

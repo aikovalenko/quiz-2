@@ -63,6 +63,16 @@
     src: url('../fonts/OfficinaSerifBoldOSC.eot?#iefix') format('embedded-opentype'), url('../fonts/OfficinaSerifBoldOSC.woff') format('woff'), url('../fonts/OfficinaSerifBoldOSC.woff2') format('woff2'), url('../fonts/OfficinaSerifBoldOSC.ttf') format('truetype'), url('../fonts/OfficinaSerifBoldOSC.svg#Officina') format('svg');
 }
 
+@font-face
+{
+    font-family: 'Constantia';
+    font-weight: 400;
+    font-style: normal;
+
+    src: url('../fonts/Constantia.eot');
+    src: url('../fonts/Constantia.eot?#iefix') format('embedded-opentype'), url('../fonts/Constantia.woff') format('woff'), url('../fonts/Constantia.woff2') format('woff2'), url('../fonts/Constantia.ttf') format('truetype'), url('../fonts/Constantia.svg#Constantia') format('svg');
+}
+
 body,
 html
 {
@@ -528,6 +538,8 @@ button
 
 .rang
 {
+    font-family: 'Constantia', 'Helvetica', Arial, serif; 
+
     position: relative;
 
     display: -webkit-box;
@@ -542,7 +554,7 @@ button
             transition: opacity .4s ease;
     text-align: center;
 
-    opacity: 0; 
+    opacity: 0;
 
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -551,7 +563,8 @@ button
 }
 .rang__text
 {
-    font-size: 40px; 
+    font-size: 40px;
+    line-height: 60px; 
 
     width: 50%;
 }
@@ -568,14 +581,15 @@ button
 .rang__text__name .rang-name
 {
     font-size: 76px;
-    font-weight: 500;
+    line-height: 76px;
 }
 .rang__text .reset
 {
-    font-family: 'Officina', 'Helvetica', Arial, serif;
-    font-size: 42px;
-    font-weight: 500; 
+    font-family: 'Constantia', 'Helvetica', Arial, serif;
+    font-size: 36px;
+    font-weight: 500;
 
+    letter-spacing: .25px; 
     text-transform: uppercase;
 
     color: #9e5a33;
@@ -583,18 +597,18 @@ button
 .rang__text .reset:after,
 .rang__text .reset:before
 {
-    right: -7px; 
+    right: -30px; 
 
-    width: 400px;
-    height: 20px;
+    width: 445px;
+    height: 25px;
 }
 .rang__text .reset:after
 {
-    top: -58px;
+    top: -80px;
 }
 .rang__text .reset:before
 {
-    bottom: -48px;
+    bottom: -70px;
 }
 
 .rang-score
