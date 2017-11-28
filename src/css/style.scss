@@ -12,7 +12,9 @@
 @include fontFace('Officina','../fonts/OfficinaSansMediumC', 400);
 @include fontFace('Officina','../fonts/OfficinaSerifBoldOSC', 500);
 
+
 @include fontFace('Constantia','../fonts/Constantia', 400);
+@include fontFace('Constantia','../fonts/Constantia-Bold', 700);
 
 body,
 html {
@@ -23,7 +25,7 @@ html {
 
 body {
 
-  font-family: 'Officina', 'Helvetica', Arial, serif;
+  font-family: 'Constantia', 'Helvetica', Arial, serif;
   font-weight: 400;
   font-size: 35px;
   user-select: none;
@@ -128,8 +130,8 @@ button {
 }
 
 .js-quiz {
-  font-family: 'Officina', 'Helvetica', Arial, serif;
-  font-weight: 500;
+  font-family: 'Constantia', 'Helvetica', Arial, serif;
+  font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
 
@@ -170,14 +172,14 @@ button {
   letter-spacing: 4px;
   text-transform: uppercase;
   transition: all .3s ease-in;
-  font-weight: 500;
+  font-weight: 700;
 
   &--under {
     max-width: 500px;
     @include push--auto;
     font-size: 37px;
     line-height: 44px;
-    font-weight: 500;
+    font-weight: 700;
     transition: all .3s ease-in;
   }
 }
@@ -186,7 +188,7 @@ button {
   margin-top: 70px;
   font-size: 80px;
   letter-spacing: 4px;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
 
   transition: all .3s ease-in;
@@ -206,8 +208,8 @@ button {
 .quiz-answer {
   position: relative;
   width: 33%;
-  font-family: 'Officina', 'Helvetica', Arial, serif;
-  font-weight: 500;
+  font-family: 'Constantia', 'Helvetica', Arial, serif;
+  font-weight: 700;
   font-size: 38px;
 
   transition: all .3s ease-in;
@@ -227,7 +229,7 @@ button {
   width: 100%;
   position: fixed;
   bottom: 135px;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 21px;
   color: #8f6752;
   text-transform: uppercase;
@@ -349,7 +351,7 @@ button {
     height: 44px;
     padding-top: 4px;
     color: #ba9865;
-    font-family: 'Officina', 'Helvetica', Arial, serif;
+    font-family: 'Constantia', 'Helvetica', Arial, serif;
     font-weight: 400;
     font-size: 20px;
     text-transform: uppercase;
@@ -380,7 +382,7 @@ button {
     width: 50%;
     font-size: 40px;
     line-height: 60px;
-    //font-weight: 500;
+    //font-weight: 700;
 
     &__score {
       margin-bottom: 80px;
@@ -392,7 +394,7 @@ button {
       .rang-name {
         font-size: 76px;
         line-height: 76px;
-        //font-weight: 700;
+        font-weight: 700;
       }
     }
 
@@ -401,7 +403,7 @@ button {
       font-family: 'Constantia', 'Helvetica', Arial, serif;
       color: #9e5a33;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: .25px;
 
       &:after, &:before {

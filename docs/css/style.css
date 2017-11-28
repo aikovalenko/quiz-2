@@ -73,6 +73,16 @@
     src: url('../fonts/Constantia.eot?#iefix') format('embedded-opentype'), url('../fonts/Constantia.woff') format('woff'), url('../fonts/Constantia.woff2') format('woff2'), url('../fonts/Constantia.ttf') format('truetype'), url('../fonts/Constantia.svg#Constantia') format('svg');
 }
 
+@font-face
+{
+    font-family: 'Constantia';
+    font-weight: 700;
+    font-style: normal;
+
+    src: url('../fonts/Constantia-Bold.eot');
+    src: url('../fonts/Constantia-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Constantia-Bold.woff') format('woff'), url('../fonts/Constantia-Bold.woff2') format('woff2'), url('../fonts/Constantia-Bold.ttf') format('truetype'), url('../fonts/Constantia-Bold.svg#Constantia') format('svg');
+}
+
 body,
 html
 {
@@ -84,7 +94,7 @@ html
 
 body
 {
-    font-family: 'Officina', 'Helvetica', Arial, serif;
+    font-family: 'Constantia', 'Helvetica', Arial, serif;
     font-size: 35px;
     font-weight: 400;
 
@@ -220,8 +230,8 @@ button
 
 .js-quiz
 {
-    font-family: 'Officina', 'Helvetica', Arial, serif;
-    font-weight: 500;
+    font-family: 'Constantia', 'Helvetica', Arial, serif;
+    font-weight: 700;
 
     -webkit-transition: all .3s ease-in;
          -o-transition: all .3s ease-in;
@@ -272,7 +282,7 @@ button
 .header
 {
     font-size: 38px;
-    font-weight: 500; 
+    font-weight: 700; 
 
     margin-bottom: 10px;
 
@@ -285,7 +295,7 @@ button
 .header--under
 {
     font-size: 37px;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 44px;
 
     max-width: 500px;
@@ -300,7 +310,7 @@ button
 .question
 {
     font-size: 80px;
-    font-weight: 500;
+    font-weight: 700;
 
     margin-top: 70px;
 
@@ -334,9 +344,9 @@ button
 
 .quiz-answer
 {
-    font-family: 'Officina', 'Helvetica', Arial, serif;
+    font-family: 'Constantia', 'Helvetica', Arial, serif;
     font-size: 38px;
-    font-weight: 500;
+    font-weight: 700;
 
     position: relative;
 
@@ -362,7 +372,7 @@ button
 .quiz-alert
 {
     font-size: 21px;
-    font-weight: 500;
+    font-weight: 700;
 
     position: fixed;
     bottom: 135px;
@@ -511,7 +521,7 @@ button
 }
 .footer button
 {
-    font-family: 'Officina', 'Helvetica', Arial, serif;
+    font-family: 'Constantia', 'Helvetica', Arial, serif;
     font-size: 20px;
     font-weight: 400;
 
@@ -581,13 +591,14 @@ button
 .rang__text__name .rang-name
 {
     font-size: 76px;
+    font-weight: 700; 
     line-height: 76px;
 }
 .rang__text .reset
 {
     font-family: 'Constantia', 'Helvetica', Arial, serif;
     font-size: 36px;
-    font-weight: 500;
+    font-weight: 700;
 
     letter-spacing: .25px; 
     text-transform: uppercase;
