@@ -16,14 +16,14 @@ var quizQuestionsLength = quizQuestions.length;
 
 function interfaceRender() {
     welcome.append(
-        "<div class=''>" +
+        "<div class='game-name'>" +
             "<div class='animate animate-inside animate-js header'>" + quizStrings[0][lang].header + "</div>" +
             "<div class='animate animate-inside animate-js header--under'>" + quizStrings[0][lang].about + "</div>" +
         "</div>" +
-        "<button class='animate animate-down animate-js js-quiz'>" + quizStrings[0][lang].start + "</button>"
+        "<button class='start-game decoration animate animate-down animate-js js-quiz'>" + quizStrings[0][lang].start + "</button>"
     );
-    footer.append( "<button class='reset'>" + quizStrings[0][lang].reset + "</button>" );
-    footer.append( "<button class='lang'>" + quizStrings[0][lang].lang + "</button>" );
+    // footer.append( "<button class='reset'>" + quizStrings[0][lang].reset + "</button>" );
+    // footer.append( "<button class='lang'>" + quizStrings[0][lang].lang + "</button>" );
 
 }
 interfaceRender();
@@ -50,7 +50,8 @@ $(document).on('click', '.js-quiz', function () {
         function render() {
             quiz.append(
                 "<div class='quiz-wrap'>" +
-                    "<div class='question animate-top animate-js'>" + quizQuestions[i][lang].question + "</div>" +
+                    "<div class='question-number animate-top animate-js'>" + quizStrings[0][lang].questionNum[i] + "</div>" +
+                    "<div class='question animate-top animate-js'><div class='decoration'>" + quizQuestions[i][lang].question + "</div></div>" +
                 "</div>"
             );
             quiz.append(
@@ -71,16 +72,19 @@ $(document).on('click', '.js-quiz', function () {
 
         setTimeout(function () {
             $('.quiz-answer').addClass('animate');
+            $('.question-number').addClass('animate');
             $('.question').addClass('animate');
         }, 100);
+        setTimeout(function () {
+        }, 500);
 
-        if ( i == quizQuestionsLength - 1 ) {
+        if ( i === quizQuestionsLength - 1 ) {
 
             render();
 
             quiz.append(
                 "<div class='quiz-additional quiz-additional--next hide'>" +
-                    "<button class='js-quiz animate-down animate-js'>" + quizStrings[0][lang].end + "</button>" +
+                    "<button class='js-quiz decoration animate-down animate-js'>" + quizStrings[0][lang].end + "</button>" +
                 "</div>"
             );
 
@@ -146,7 +150,7 @@ $(document).on('click', '.js-quiz', function () {
 
             quiz.append(
                 "<div class='quiz-additional quiz-additional--next hide'>" +
-                    "<button class='js-quiz animate-down animate-js'>" + quizStrings[0][lang].next + "</button>" +
+                    "<button class='js-quiz decoration animate-down animate-js'>" + quizStrings[0][lang].next + "</button>" +
                 "</div>"
             );
 
@@ -187,7 +191,7 @@ $(document).on('click', '.quiz-answer', function () {
         }
 
     } else {
-        quiz.append( "<div class='quiz-alert'><div class='quiz-alert__text'>" + quizStrings[0][lang].tryAgain + "</div></div>" );
+        quiz.append( "<div class='quiz-alert decoration'>" + quizStrings[0][lang].tryAgain + "</div>" );
         $(this).addClass('pressed');
     }
 
@@ -199,7 +203,7 @@ $(document).on('click', '.reset', function () {
 
     $('.animate-js').removeClass('animate');
     $('.background').addClass('background--intro').removeClass("background--" + i + '');
-    $('.rang').css('opacity', '0')
+    $('.rang').css('opacity', '0');
     setTimeout(function () {
         quiz.html('');
         welcome.show();

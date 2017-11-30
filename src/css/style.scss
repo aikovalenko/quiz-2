@@ -9,9 +9,6 @@
 @import "partials/footer";
 @import "partials/footer";
 
-@include fontFace('Officina','../fonts/OfficinaSansMediumC', 400);
-@include fontFace('Officina','../fonts/OfficinaSerifBoldOSC', 500);
-
 
 @include fontFace('Constantia','../fonts/Constantia', 400);
 @include fontFace('Constantia','../fonts/Constantia-Bold', 700);
@@ -125,9 +122,7 @@ button {
 
 
 
-.pressed {
-  color: #8f6752;
-}
+
 
 .js-quiz {
   font-family: 'Constantia', 'Helvetica', Arial, serif;
@@ -143,54 +138,101 @@ button {
 }
 
 .welcome {
-  margin-top: 325px;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  flex-direction: column;
   text-align: center;
 
-  .js-quiz {
-    margin-top: 99px;
-    font-size: 38px;
-    color: #af2626;
+
+  .game-name {
+    margin-top: 200px;
   }
+  .start-game {
+    @include push--auto;
+    margin-bottom: 140px;
+  }
+}
+.decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  min-height: 210px;
+  padding-top: 70px;
+  padding-bottom: 65px;
+
+  font-size: 60px;
+  font-weight: 700;
+  color: #af2626;
+
+  box-sizing: border-box;
+
+  &:after, &:before {
+    position: absolute;
+    right: 50%;
+    content: '';
+    display: block;
+    width: 452px;
+    height: 37px;
+    background-image: url("../images/decor.png");
+    background-size: cover;
+  }
+  &:after {
+    top: 0;
+    transform: translateX(50%);
+  }
+
+  &:before {
+    bottom: 0;
+    transform: translateX(50%) rotate(180deg);
+  }
+
 }
 
 .js-quiz {
   position: relative;
 
-  &:after {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 100%;
-    height: 400%;
-    top: -150%;
-  }
 }
 
 .header {
   margin-bottom: 10px;
-  font-size: 38px;
-  letter-spacing: 4px;
+  font-size: 53px;
+  letter-spacing: .8px;
   text-transform: uppercase;
   transition: all .3s ease-in;
   font-weight: 700;
+  color: #694025;
 
   &--under {
-    max-width: 500px;
+    max-width: 860px;
     @include push--auto;
-    font-size: 37px;
-    line-height: 44px;
-    font-weight: 700;
+    font-size: 60px;
+    //line-height: 44px;
+    font-weight: 400;
     transition: all .3s ease-in;
+    color: #694025;
   }
 }
 
 .question {
-  margin-top: 70px;
-  font-size: 80px;
-  letter-spacing: 4px;
+  //margin-top: 70px;
+  font-size: 60px;
+  //letter-spacing: 4px;
   font-weight: 700;
-  text-transform: uppercase;
+  color: #694025;
+  //text-transform: uppercase;
 
+  transition: all .3s ease-in;
+}
+
+.question-number {
+  margin-top: 105px;
+  margin-bottom: 100px;
+  color: #c59c67;
+  font-size: 50px;
+  font-weight: 700;
   transition: all .3s ease-in;
 }
 
@@ -200,138 +242,126 @@ button {
 
 .answers {
   display: flex;
-  margin-top: 190px;
-  justify-content: space-around;
+  margin-top: 120px;
+  align-items: center;
+  flex-direction: column;
   padding-right: 30px;
   padding-left: 30px;
 }
 .quiz-answer {
   position: relative;
-  width: 33%;
+  margin-bottom: 90px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  //width: 33%;
   font-family: 'Constantia', 'Helvetica', Arial, serif;
-  font-weight: 700;
-  font-size: 38px;
+  //font-weight: 700;
+  font-size: 50px;
+
+  color: #af2626;
 
   transition: all .3s ease-in;
 
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 250%;
-    top: -75%;
-  }
+
 }
 
 .quiz-alert {
-
   width: 100%;
-  position: fixed;
-  bottom: 135px;
-  font-weight: 700;
-  font-size: 21px;
-  color: #8f6752;
+  position: absolute;
+  bottom: 140px;
+  font-weight: 400;
+  font-size: 42px;
+  color: #b69162;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: .8px;
 
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
+  will-change: transform;
   backface-visibility: hidden;
   perspective: 1000px;
-
-  &__text {
-    position: relative;
-    width: 375px;
-    @include push--auto;
-
-    &:after, &:before {
-      position: absolute;
-      right: 62px;
-      content: '';
-      display: block;
-      width: 256px;
-      height: 13px;
-      background-image: url("../images/decor.png");
-      background-size: cover;
-    }
-    &:after {
-      top: -46px;
-    }
-
-    &:before {
-      bottom: -40px;
-    }
-  }
 
 }
 
 .quiz-additional {
   .js-quiz {
+    font-size: 42px;
 
-    font-size: 21px;
-    color: #af2626;
   }
 
   &--next {
     width: 100%;
-    position: fixed;
-    bottom: 134px;
+    position: absolute;
+    bottom: 140px;
   }
 }
 
 .description {
+  position: absolute;
+  bottom: 400px;
+  padding-left: 120px;
+  padding-right: 120px;
   @include push--auto;
-  font-size: 20px;
+  font-size: 34px;
+
+  color: #694025;
+
 
   transition: all .3s ease-in;
+
+  p {
+    margin-bottom: 50px;
+    margin-top: 0;
+  }
 }
 
-.question {
 
-  &--1 {
-    .description {
-      max-width: 235px;
-      margin-top: 75px;
-    }
-  }
-  &--2 {
-    .description {
-      max-width: 440px;
-      margin-top: 40px;
-    }
-  }
-  &--3 {
-    .description {
-      width: 250px;
-      margin-top: 120px;
-    }
-  }
-  &--4 {
-    .description {
-      width: 387px;
-      margin-top: 140px;
-    }
-  }
-  &--5 {
-    .description {
-      width: 340px;
-      margin-top: 120px;
-    }
-  }
-  &--6 {
-    .description {
-      width: 350px;
-      margin-top: 70px;
-    }
-  }
-  &--7 {
-    .description {
-      width: 190px;
-      margin-top: 110px;
-    }
-  }
-}
+
+//.question {
+//
+//  &--1 {
+//    .description {
+//      max-width: 235px;
+//      margin-top: 75px;
+//    }
+//  }
+//  &--2 {
+//    .description {
+//      max-width: 440px;
+//      margin-top: 40px;
+//    }
+//  }
+//  &--3 {
+//    .description {
+//      width: 250px;
+//      margin-top: 120px;
+//    }
+//  }
+//  &--4 {
+//    .description {
+//      width: 387px;
+//      margin-top: 140px;
+//    }
+//  }
+//  &--5 {
+//    .description {
+//      width: 340px;
+//      margin-top: 120px;
+//    }
+//  }
+//  &--6 {
+//    .description {
+//      width: 350px;
+//      margin-top: 70px;
+//    }
+//  }
+//  &--7 {
+//    .description {
+//      width: 190px;
+//      margin-top: 110px;
+//    }
+//  }
+//}
 
 .footer {
   position: fixed;
@@ -447,7 +477,10 @@ button {
   opacity: 1;
 }
 
-
+.pressed {
+  color: #8f6752;
+  opacity: .8;
+}
 
 @keyframes shake {
   10%, 90% {
