@@ -116,14 +116,18 @@ body
     opacity: 0; 
     -webkit-background-size: cover;
             background-size: cover;
+
+    will-change: transform;
 }
 .background--animate
 {
     -webkit-transition: all .3s ease-in;
          -o-transition: all .3s ease-in;
-            transition: all .3s ease-in; 
+            transition: all .3s ease-in;
 
     opacity: 1;
+
+    will-change: transform;
 }
 .background--intro
 {
@@ -256,8 +260,11 @@ button
 
 .decoration
 {
+    font-family: 'Constantia', 'Helvetica', Arial, serif;
     font-size: 60px;
     font-weight: 700;
+
+    position: relative;
 
     display: -webkit-box;
     display: -webkit-flex;
@@ -306,6 +313,8 @@ button
     -webkit-transform: translateX(50%);
         -ms-transform: translateX(50%);
             transform: translateX(50%);
+
+    will-change: transform;
 }
 .decoration:before
 {
@@ -314,6 +323,8 @@ button
     -webkit-transform: translateX(50%) rotate(180deg);
         -ms-transform: translateX(50%) rotate(180deg);
             transform: translateX(50%) rotate(180deg);
+
+    will-change: transform;
 }
 
 .js-quiz
@@ -547,7 +558,9 @@ button
     display: -webkit-flex;
     display: -ms-flexbox;
     display:         flex;
+            flex-direction: column;
 
+    width: 100%;
     height: 100%;
 
     -webkit-transition: opacity .4s ease;
@@ -561,60 +574,69 @@ button
     -webkit-align-items: center;
     -ms-flex-align: center;
             align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
 }
-.rang__text
+.rang__top
+{
+    margin-top: 105px;
+
+    -webkit-transition: all .6s ease;
+         -o-transition: all .6s ease;
+            transition: all .6s ease;
+}
+.rang__bottom
+{
+    -webkit-transition: all .6s ease;
+         -o-transition: all .6s ease;
+            transition: all .6s ease;
+}
+.rang__score
 {
     font-size: 40px;
-    line-height: 60px; 
+    line-height: 54px;
 
-    width: 50%;
+    margin-bottom: 65px;
+
+    color: #2b2822;
 }
-.rang__text__score
+.rang__name-description
 {
-    margin-bottom: 80px;
+    font-size: 34px;
+
+    margin-bottom: 42px;
+
+    color: #694025;
 }
-.rang__text__name
+.rang__name
 {
+    font-size: 60px;
+    font-weight: 700; 
+
     margin-bottom: 240px;
 
-    color: #8f6752;
+    color: #694025;
 }
-.rang__text__name .rang-name
+.rang .reset
 {
-    font-size: 76px;
-    font-weight: 700; 
-    line-height: 76px;
-}
-.rang__text .reset
-{
-    font-family: 'Constantia', 'Helvetica', Arial, serif;
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 42px; 
 
-    letter-spacing: .25px; 
+    margin-bottom: 140px;
+
+    letter-spacing: .8px;
     text-transform: uppercase;
-
-    color: #9e5a33;
-}
-.rang__text .reset:after,
-.rang__text .reset:before
-{
-    right: -30px; 
-
-    width: 445px;
-    height: 25px;
-}
-.rang__text .reset:after
-{
-    top: -80px;
-}
-.rang__text .reset:before
-{
-    bottom: -70px;
 }
 
 .rang-score
 {
+    font-weight: 700; 
+
     color: #8f6752;
 }
 
@@ -630,6 +652,8 @@ button
             transform: scale(.3);
 
     opacity: 0;
+
+    will-change: transform;
 }
 
 .animate-down
@@ -639,6 +663,8 @@ button
             transform: translateY(300px);
 
     opacity: 0;
+
+    will-change: transform;
 }
 
 .animate-top
@@ -648,6 +674,8 @@ button
             transform: translateY(-300px);
 
     opacity: 0;
+
+    will-change: transform;
 }
 
 .animate
@@ -657,6 +685,8 @@ button
             transform: translateY(0) scale(1);
 
     opacity: 1;
+
+    will-change: transform;
 }
 
 .pressed
@@ -672,12 +702,16 @@ button
     {
         -webkit-transform: translate3d(-1px, 0, 0);
                 transform: translate3d(-1px, 0, 0);
+
+        will-change: transform;
     }
     20%,
     80%
     {
         -webkit-transform: translate3d(2px, 0, 0);
                 transform: translate3d(2px, 0, 0);
+
+        will-change: transform;
     }
     30%,
     50%,
@@ -685,12 +719,16 @@ button
     {
         -webkit-transform: translate3d(-4px, 0, 0);
                 transform: translate3d(-4px, 0, 0);
+
+        will-change: transform;
     }
     40%,
     60%
     {
         -webkit-transform: translate3d(4px, 0, 0);
                 transform: translate3d(4px, 0, 0);
+
+        will-change: transform;
     }
 }
 
@@ -701,12 +739,16 @@ button
     {
         -webkit-transform: translate3d(-1px, 0, 0);
                 transform: translate3d(-1px, 0, 0);
+
+        will-change: transform;
     }
     20%,
     80%
     {
         -webkit-transform: translate3d(2px, 0, 0);
                 transform: translate3d(2px, 0, 0);
+
+        will-change: transform;
     }
     30%,
     50%,
@@ -714,11 +756,15 @@ button
     {
         -webkit-transform: translate3d(-4px, 0, 0);
                 transform: translate3d(-4px, 0, 0);
+
+        will-change: transform;
     }
     40%,
     60%
     {
         -webkit-transform: translate3d(4px, 0, 0);
                 transform: translate3d(4px, 0, 0);
+
+        will-change: transform;
     }
 }

@@ -1,4 +1,3 @@
-/* up 2 */
 
 var i = 0,
     score = 0,
@@ -10,7 +9,7 @@ var i = 0,
     background = $('.background'),
     lang = htmlTag.attr('lang');
 
-var quizQuestionsLength = quizQuestions.length;
+var quizQuestionsLength = quizQuestionsTest.length;
 
 
 
@@ -94,17 +93,30 @@ $(document).on('click', '.js-quiz', function () {
         } else if ( i === quizQuestionsLength ) {
 
             function getRang(rang) {
+                // $(".background").removeClass("background--" + i + '');
                 $('body').append(
                     "<div class='rang'>" +
-                        "<div class='rang__text'>" +
-                            "<div class='rang__text__score'>" + quizStrings[0][lang].rangText[score] + "</div>" +
-                            "<div class='rang__text__name'>" + quizStrings[0][lang].rang[rang] + "</div>" +
-
-                            "<button class='reset reset--rang quiz-alert__text'>Начать заново</button>" +
+                        "<div class='rang__top animate-top animate-js'>" +
+                            "<div class='rang__score'>" + quizStrings[0][lang].rangText[score] + "</div>" +
+                            "<div class='rang__name decoration'>" + quizStrings[0][lang].rang[rang] + "</div>" +
+                        "</div>" +
+                        "<div class='rang__bottom animate-down animate-js'>" +
+                            "<div class='rang__name-description'>" + quizStrings[0][lang].rangDescription[rang] + "</div>" +
+                            "<button class='reset decoration reset--rang quiz-alert__text'>Начать квест заново</button>" +
                         "</div>" +
                     "</div>"
                 );
-                $('.rang').addClass("background--score--" + score + '').css('opacity', '1');
+                setTimeout(function () {
+
+                    $('.rang').addClass("background--score--" + score + '').css('opacity', '1');
+                    $('.rang__top').addClass("animate");
+                }, 300);
+                setTimeout(function () {
+
+                }, 700);
+                setTimeout(function () {
+                    $('.rang__bottom').addClass("animate");
+                }, 2500);
             }
 
 
@@ -170,7 +182,7 @@ $(document).on('click', '.quiz-answer', function () {
 
     $('.quiz-alert').remove();
 
-    if ($(this).attr('data-true') != 0) {
+    if ($(this).attr('data-true') !== 0) {
 
         $('.background').addClass("background--" + i + '');
         $('.quiz-answer').removeClass('animate');

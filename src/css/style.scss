@@ -48,12 +48,14 @@ body {
   background-size: cover;
 
   transition: all .3s ease-in;
+  will-change: transform;
 
   opacity: 0;
 
   &--animate {
     opacity: 1;
     transition: all .3s ease-in;
+    will-change: transform;
   }
 
 
@@ -154,6 +156,7 @@ button {
   }
 }
 .decoration {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,6 +166,7 @@ button {
   padding-top: 70px;
   padding-bottom: 65px;
 
+  font-family: 'Constantia', 'Helvetica', Arial, serif;
   font-size: 60px;
   font-weight: 700;
   color: #af2626;
@@ -182,11 +186,13 @@ button {
   &:after {
     top: 0;
     transform: translateX(50%);
+    will-change: transform;
   }
 
   &:before {
     bottom: 0;
     transform: translateX(50%) rotate(180deg);
+    will-change: transform;
   }
 
 }
@@ -400,58 +406,54 @@ button {
 .rang {
   display: flex;
   height: 100%;
+  width: 100%;
   position: relative;
   text-align: center;
   align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 
   transition: opacity .4s ease;
   opacity: 0;
   font-family: 'Constantia', 'Helvetica', Arial, serif;
 
-  &__text {
-    width: 50%;
+
+  &__top {
+    margin-top: 105px;
+    transition: all .6s ease;
+  }
+  &__bottom {
+    transition: all .6s ease;
+  }
+  &__score {
+    margin-bottom: 65px;
     font-size: 40px;
-    line-height: 60px;
-    //font-weight: 700;
+    line-height: 54px;
+    color: #2b2822;
+  }
+  &__name-description {
+    margin-bottom: 42px;
+    font-size: 34px;
+    color: #694025;
+  }
 
-    &__score {
-      margin-bottom: 80px;
-    }
+  &__name {
+    margin-bottom: 240px;
+    color: #694025;
+    font-size: 60px;
+    font-weight: 700;
+  }
 
-    &__name {
-      margin-bottom: 240px;
-      color: #8f6752;
-      .rang-name {
-        font-size: 76px;
-        line-height: 76px;
-        font-weight: 700;
-      }
-    }
-
-    .reset {
-      font-size: 36px;
-      font-family: 'Constantia', 'Helvetica', Arial, serif;
-      color: #9e5a33;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: .25px;
-
-      &:after, &:before {
-        width: 445px;
-        height: 25px;
-        right: -30px;
-      }
-      &:after {
-        top: -80px;
-      }
-      &:before {
-        bottom: -70px;
-      }
-    }
+  .reset {
+    margin-bottom: 140px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    font-size: 42px;
   }
 }
 .rang-score {
   color: #8f6752;
+  font-weight: 700;
 }
 
 
@@ -463,18 +465,22 @@ button {
 .animate-inside {
   transform: scale(.3);
   opacity: 0;
+  will-change: transform;
 }
 .animate-down {
   transform: translateY(300px);
   opacity: 0;
+  will-change: transform;
 }
 .animate-top {
   transform: translateY(-300px);
   opacity: 0;
+  will-change: transform;
 }
 .animate {
   transform: translateY(0) scale(1);
   opacity: 1;
+  will-change: transform;
 }
 
 .pressed {
@@ -485,17 +491,21 @@ button {
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
+    will-change: transform;
   }
 
   20%, 80% {
     transform: translate3d(2px, 0, 0);
+    will-change: transform;
   }
 
   30%, 50%, 70% {
     transform: translate3d(-4px, 0, 0);
+    will-change: transform;
   }
 
   40%, 60% {
     transform: translate3d(4px, 0, 0);
+    will-change: transform;
   }
 }
