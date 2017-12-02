@@ -107,9 +107,10 @@ $(document).on('click', '.js-quiz', function () {
                     "</div>"
                 );
                 setTimeout(function () {
-
                     $('.rang').addClass("background--score--" + score + '').css('opacity', '1');
                     $('.rang__top').addClass("animate");
+                    score = 0;
+                    i = 0;
                 }, 300);
                 setTimeout(function () {
 
@@ -122,7 +123,7 @@ $(document).on('click', '.js-quiz', function () {
 
             // background.addClass("background--animate background--score--" + score + '');
             if (score === 0) {
-                console.log('new');
+                console.log('новик');
                 getRang(0);
             }
             else if (score === 1 || score === 2 || score === 3) {
@@ -138,23 +139,11 @@ $(document).on('click', '.js-quiz', function () {
                 getRang(3);
             }
             else if (score === 10) {
-                console.log('голова');
+                console.log('воевода');
                 getRang(4);
             }
-            // setTimeout(function () {
-            //     // quiz.append( "<div class='score'>" + quizStrings[0][lang].score + " " + score + " " + quizStrings[0][lang].out + " " + quizQuestionsLength +"</div>" );
-            //     welcome.show();
-            //     $('.rang').remove();
-            //     $('.animate-js').addClass('animate');
-            //     $('.background').addClass('background--animate background--intro');
-            //
-            // }, 10000);
-            setTimeout(function () {
 
 
-                score = 0;
-                i = 0;
-            }, 100);
 
         } else {
 
@@ -182,7 +171,7 @@ $(document).on('click', '.quiz-answer', function () {
 
     $('.quiz-alert').remove();
 
-    if ($(this).attr('data-true') !== 0) {
+    if ($(this).attr('data-true') != 0) {
 
         $('.background').addClass("background--" + i + '');
         $('.quiz-answer').removeClass('animate');
@@ -209,6 +198,7 @@ $(document).on('click', '.quiz-answer', function () {
 
 
     firstClick = false;
+    console.log(score + " - счет;");
 });
 
 $(document).on('click', '.reset', function () {
