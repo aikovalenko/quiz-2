@@ -50,7 +50,7 @@ $(document).on('click', '.js-quiz', function () {
             quiz.append(
                 "<div class='quiz-wrap'>" +
                     "<div class='question-number animate-top animate-js'>" + quizStrings[0][lang].questionNum[i] + "</div>" +
-                    "<div class='question animate-top animate-js'><div class='decoration'>" + quizQuestions[i][lang].question + "</div></div>" +
+                    "<div class='question animate-top animate-js'><div class='decoration decoration--question'>" + quizQuestions[i][lang].question + "</div></div>" +
                 "</div>"
             );
             quiz.append(

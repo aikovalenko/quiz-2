@@ -161,6 +161,18 @@ body
 {
     background-image: url('../images/background-7.jpg');
 }
+.background--8
+{
+    background-image: url('../images/background-8.jpg');
+}
+.background--9
+{
+    background-image: url('../images/background-9.jpg');
+}
+.background--10
+{
+    background-image: url('../images/background-10.jpg');
+}
 .background--score--0
 {
     background-image: url('../images/background-result-5.jpg');
@@ -288,6 +300,22 @@ button
     -webkit-align-items: center;
     -ms-flex-align: center;
             align-items: center;
+}
+.decoration--question
+{
+    font-weight: 400; 
+
+            flex-direction: column;
+
+    padding-right: 55px;
+    padding-left: 55px;
+
+    color: #694025;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
 }
 .decoration:after,
 .decoration:before
@@ -481,10 +509,9 @@ button
     position: absolute;
     bottom: 400px;
 
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-right: 120px;
-    padding-left: 120px;
 
     -webkit-transition: all .3s ease-in;
          -o-transition: all .3s ease-in;
@@ -496,6 +523,10 @@ button
 {
     margin-top: 0; 
     margin-bottom: 50px;
+}
+.description p:last-child
+{
+    margin-bottom: 0;
 }
 
 .footer

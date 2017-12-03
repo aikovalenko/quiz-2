@@ -84,6 +84,15 @@ body {
   &--7 {
     background-image: url('../images/background-7.jpg');
   }
+  &--8 {
+    background-image: url('../images/background-8.jpg');
+  }
+  &--9 {
+    background-image: url('../images/background-9.jpg');
+  }
+  &--10 {
+    background-image: url('../images/background-10.jpg');
+  }
 
   &--score {
     &--0 {
@@ -172,6 +181,14 @@ button {
   color: #af2626;
 
   box-sizing: border-box;
+  
+  &--question {
+    flex-direction: column;
+    padding-left: 55px;
+    padding-right: 55px;
+    color: #694025;
+    font-weight: 400;
+  }
 
   &:after, &:before {
     position: absolute;
@@ -305,8 +322,7 @@ button {
 .description {
   position: absolute;
   bottom: 400px;
-  padding-left: 120px;
-  padding-right: 120px;
+  width: 100%;
   @include push--auto;
   font-size: 34px;
 
@@ -318,6 +334,10 @@ button {
   p {
     margin-bottom: 50px;
     margin-top: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
